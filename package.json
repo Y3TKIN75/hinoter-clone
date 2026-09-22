@@ -1,0 +1,42 @@
+{
+  "name": "hinoter-clone",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "AI toplantı not alıcı — kaydeder, yazıya döker, özetler ve aksiyonları çıkarır (Groq API ile)",
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c blue,green \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "cross-env NODE_OPTIONS=--no-warnings=ExperimentalWarning tsx watch server/index.ts",
+    "dev:client": "vite",
+    "build": "vite build",
+    "start": "cross-env NODE_ENV=production NODE_OPTIONS=--no-warnings=ExperimentalWarning tsx server/index.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.server.json --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.0",
+    "express": "^5.2.1",
+    "fix-webm-duration": "^1.0.6",
+    "groq-sdk": "^1.6.0",
+    "multer": "^2.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.4",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.5",
+    "cross-env": "^10.1.0",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.0",
+    "vite": "^8.3.0"
+  },
+  "engines": { "node": ">=22.13" }
+}
